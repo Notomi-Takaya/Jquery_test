@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(function(){
+
+  $('#addbut').click(function(){
+    $('#favorite').append('<p>回答：<input type="text"></p>');
+  });
+
+  $('#ans').click(function(){
+    $(this).val("クリックして解答を入力");
+  });
+
+
+  $('img').click(function(){
+  $(this).hide('slow');
+  $('#peach-text').slideDown('slow');
+  });
+
+
+  var num1=$('#num1').val();
+  var num2=$('#num2').val();
+
+// 計算を行います
+$('#calc').click(function(){
+  var num1=$('#num1').val();
+  var num2=$('#num2').val();
+  var calcnum=parseInt(num1)+parseInt(num2);
+
+// 以下は計算した値の票か
+  if(calcnum<=100){
+    $('#answer').val(calcnum);
+  }else{
+    $('#answer').val(calcnum+"＊100より大きい値です。指示にしたがってください！！！＊");
+  }
+
+});
+
+$('#getTime').click(function(){
+  $('#nowTime').val(new Date());
+  $('#letjusttweet').slideDown('slow');
+  $('#letjusttweet').attr({'href':'https://twitter.com/share?text='+ new Date()  +'&url='});
+});
+
+});
+</script>
+
+<style>
+  #peach-text {display: none;color:red;}
+  #letjusttweet {display: none}
+
+</style>
+
+  </head>
+  <body>
+    <h3>クリックして回答欄を自動追加!!!!</h3>
+    <div id="favorite">
+      <input id='addbut'type="button" value="入力欄を追加">
+      <p>回答：<input id='ans' type="text"></p>
+      <p>回答：<input id='ans' type="text"></p>
+      <p>回答：<input id='ans' type="text"></p>
+    </div>
+<h3>ももをクリックして桃を食べましょう</h3>
+  <img src="data:image/jpeg;base64,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" alt="むむ">
+  <h3 id='peach-text'>ももが消えてしまいました！！WOW</h3>
+  <br>
+
+  <div>
+  <h1>足し算を行います(100より大きい値を計算しないでください)</h1>
+  <input type="text" id="num1">
+  +
+  <input type="text" id="num2">
+  <button type="button" name="button" id="calc">計算をする</button>
+  <h3>結果は</h3>
+  <input type="text" id="answer">
+  </div>
+
+  <h1>現在時刻をツイートしてみよう</h1>
+  <div>
+    <input type="text" id='nowTime'>
+    <button type="button" name="button" id='getTime'>今何時？</button>
+<!-- ツイートするボタン -->
+<a id='letjusttweet' onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">
+twitterでshare
+</a>
+
+  </div>
+
+  </body>
+</html>
